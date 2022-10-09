@@ -102,21 +102,7 @@ class pdf_tcpdflabel extends CommonStickerGenerator
 		// set cell margins
 		$pdf->setCellMargins(0, 0, 0, 0);
 		
-		$servername = "localhost";
-		$database = "dolibarr";
-		$username = "dolibarrmysql";
-		$password = "changeme";
-		$connect = mysqli_connect($servername, $username, $password, $database);
-		if (!$connect) {
-			die("Error :" . mysqli_connect_error());
-		}
-
-		$query = mysqli_query($connect, "SELECT ref FROM llx_product WHERE barcode = '".$code."';");
-		$result = mysqli_fetch_array($query);
-		
-		mysqli_free_result($query);
-		mysqli_close();
-		
+				
 		$name_of_code_barre = 'Name of product';
 		
 		if ($is2d) {
@@ -127,7 +113,7 @@ class pdf_tcpdflabel extends CommonStickerGenerator
 			$html .= '<br />';
 			$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 			
-			$pdf->MultiCell(65, 5, $result, 0, 'L', 0, 0, '', '', true);
+			$pdf->MultiCell(65, 5, $name_of_code_barre, 0, 'L', 0, 0, '', '', true);
 			/*$pdf->Cell(45, 0, 'CODE 39', 1, 1);*/
 		}
 	}
