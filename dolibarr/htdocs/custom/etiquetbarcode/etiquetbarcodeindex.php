@@ -98,8 +98,9 @@ print load_fiche_titre($langs->trans("EtiquetBarcodeArea"), '', 'etiquetbarcode.
 print '<div class="fichecenter"><div class="fichethirdleft">';
 
 
-/* BEGIN MODULEBUILDER DRAFT MYOBJECT
+/* BEGIN MODULEBUILDER DRAFT MYOBJECT*/
 // Draft MyObject
+/*
 if (! empty($conf->etiquetbarcode->enabled) && $user->rights->etiquetbarcode->read)
 {
 	$langs->load("orders");
@@ -169,8 +170,8 @@ if (! empty($conf->etiquetbarcode->enabled) && $user->rights->etiquetbarcode->re
 	{
 		dol_print_error($db);
 	}
-}
-END MODULEBUILDER DRAFT MYOBJECT */
+}*/
+/* END MODULEBUILDER DRAFT MYOBJECT */
 
 
 print '</div><div class="fichetwothirdright">';
@@ -179,8 +180,9 @@ print '</div><div class="fichetwothirdright">';
 $NBMAX = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
 $max = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
 
-/* BEGIN MODULEBUILDER LASTMODIFIED MYOBJECT
+ /*BEGIN MODULEBUILDER LASTMODIFIED MYOBJECT*/
 // Last modified myobject
+/*
 if (! empty($conf->etiquetbarcode->enabled) && $user->rights->etiquetbarcode->read)
 {
 	$sql = "SELECT s.rowid, s.ref, s.label, s.date_creation, s.tms";
