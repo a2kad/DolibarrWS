@@ -68,8 +68,8 @@ class modEtiquetBarcode extends DolibarrModules
 		$this->descriptionlong = "EtiquetBarcodeDescription";
 
 		// Author
-		$this->editor_name = 'Editor name';
-		$this->editor_url = 'https://www.example.com';
+		$this->editor_name = 'Ruslan RESHETNIKOV';
+		$this->editor_url = 'https://www.linkedin.com/in/ruslan-reshetnikov/ ';
 
 		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
 		$this->version = '1.0';
