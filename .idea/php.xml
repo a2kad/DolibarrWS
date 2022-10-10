@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/sabre/sabre" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/sabre/composer" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/sabre/psr" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/swiftmailer/lexer" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/swiftmailer/egulias" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/swiftmailer/lib" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/ace/src" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/nnnick/chartjs" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/OAuth/OAuth2" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/OAuth/OAuth1" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/OAuth/Common" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/mike42/escpos-php" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/restler/framework" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/Psr/simple-cache" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/Psr/Log" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/nusoap/lib" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/ckeditor/ckeditor" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/jquery/plugins" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/jquery/css" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/jquery/js" />
+      <path value="$PROJECT_DIR$/dolibarr/htdocs/includes/odtphp/zip" />
+    </include_path>
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/dolibarr/htdocs/includes/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>
