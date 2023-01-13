@@ -188,22 +188,22 @@ input, input.flat, textarea, textarea.flat, form.flat select, select, select.fla
 	margin: 0px 0px 0px 0px;
 	background-color: var(--inputbackgroundcolor);
 	<?php if (empty($conf->global->THEME_ADD_BACKGROUND_ON_INPUT)) { ?>
-		border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
+		border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '' : ''; ?>: solid 3px var(--inputbordercolor);
 	<?php } ?>
 }
 
 .liste_titre input, .liste_titre select {
 	border: none;
-	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
+	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '' : ''; ?>: solid 3px var(--inputbordercolor);
 	/* padding: 5px; */
 }
 .pageplusone, .divadvancedsearchfieldcompinput,
 div.tabBar input, div.tabBar input.flat, div.tabBar textarea, div.tabBar textarea.flat, div.tabBar form.flat select, div.tabBar select, div.tabBar select.flat, div.tabBar .dataTables_length label select
 {
-	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
+	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '' : ''; ?>: solid 3px var(--inputbordercolor);
 	<?php
 	if (!empty($conf->global->THEME_ADD_BACKGROUND_ON_INPUT)) { ?>
-		background-color: #f8f8fa;
+		background-color: #999999;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		<?php
@@ -214,6 +214,11 @@ div.tabBar input, div.tabBar input.flat, div.tabBar textarea, div.tabBar textare
 	background: #fff;
 	border-bottom: solid 1px var(--inputbordercolor);
 	border-radius: 3px;
+}
+div.ruslan_div {
+	display: flex;
+	text-align: center;
+	color: red;
 }
 input[name=duration_value], input[name=durationhour]
 {
@@ -288,7 +293,7 @@ div.tabBar textarea:focus {
 input:focus:not(.button):not(.select2-search__field):not(#top-bookmark-search-input):not(.search_component_input):not(.input-search-takepos),
  select:focus, .select2-container--open [aria-expanded="false"].select2-selection--single {
 /* div.tabBar input:focus, div.tabBar select:focus { */
-	border-bottom: 1px solid #666 !important;
+	border: 3px solid #666 !important;
 	border-bottom-left-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
 }
@@ -522,7 +527,7 @@ input[type=file]    {
 	border-left: none;
 	border-right: none;
 	<?php } ?>
-	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
+	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '' : ''; ?>: solid 3px var(--inputbordercolor);
 }
 input[type=checkbox] { background-color: transparent; border: none; box-shadow: none; }
 input[type=radio]    { background-color: transparent; border: none; box-shadow: none; }
@@ -1082,7 +1087,7 @@ div.divsearchfield {
 	padding-bottom: 3px;
 	padding-<?php echo $left; ?>: 0;
 	padding-<?php echo $right; ?>: 0;
-	border-bottom: solid 1px var(--inputbordercolor);
+	border: solid 3px var(--inputbordercolor);
 	height: 24px;
 	border-radius: 3px;
 }
@@ -6054,9 +6059,7 @@ span#select2-taskid-container[title^='--'] {
 span.select2.select2-container.select2-container--default {
 	text-align: initial;
 	<?php if (empty($conf->global->THEME_SHOW_BORDER_ON_INPUT)) { ?>
-	border-left: none;
-	border-top: none;
-	border-right: none;
+
 	<?php } ?>
 }
 span.select2.select2-container.select2-container--default {
@@ -6069,8 +6072,8 @@ input.select2-input {
 	border-bottom: none ! important;
 }
 .select2-choice {
-	border: none;
-	border-bottom: solid 1px var(--inputbordercolor) !important;	/* required to avoid to lose bottom line when focus is lost on select2. */
+	/*border: none;*/
+	border: solid 3px var(--inputbordercolor) !important;	/* required to avoid to lose bottom line when focus is lost on select2. */
 }
 .select2-results .select2-highlighted.optionblue {
 	color: #FFF !important;
@@ -6083,7 +6086,7 @@ input.select2-input {
 	border: none;
 }
 .select2-container--focus span.select2-selection.select2-selection--single {
-	border-bottom: 1px solid var(--inputbordercolor) !important;
+	border: 3px solid var(--inputbordercolor) !important;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
@@ -6107,7 +6110,7 @@ input.select2-input {
 	color: #999 !important;
 }
 .select2-choice, .select2-container .select2-choice {
-	border-bottom: solid 1px rgba(0,0,0,.4);
+	border: solid 3px rgba(0,0,0,.4);
 }
 .select2-container .select2-choice > .select2-chosen {
 	margin-right: 23px;
@@ -6151,12 +6154,10 @@ input.select2-input {
 {
 	outline: none;
 	<?php if (empty($conf->global->THEME_SHOW_BORDER_ON_INPUT)) { ?>
-	border-top: none;
-	border-left: none;
-	border-right: none;
+
 	<?php } ?>
 
-	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '-bottom' : ''; ?>: solid 1px var(--inputbordercolor);
+	border<?php echo empty($conf->global->THEME_SHOW_BORDER_ON_INPUT) ? '' : ''; ?>: solid 3px var(--inputbordercolor);
 
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
@@ -6167,17 +6168,13 @@ input.select2-input {
 	border-bottom-right-radius: 0;
 }
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-	border-top: none;
-	border-left: none;
-	border-right: none;
+
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
 .select2-container--default .select2-selection--multiple {
-	border-bottom: solid 1px var(--inputbordercolor);
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border: solid 3px var(--inputbordercolor);
+
 	border-radius: 3px;
 	background: var(--inputbackgroundcolor);
 	line-height: normal;
@@ -7678,6 +7675,7 @@ div.clipboardCPValue.hidewithsize {
 		max-width: 230px;
 	}
 }
+
 
 
 <?php

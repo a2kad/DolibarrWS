@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\htdocs",
+    "\\htdocs\\core",
+    "\\htdocs\\core\\tpl",
+    "\\htdocs\\theme",
+    "\\htdocs\\theme\\clear",
+    "\\htdocs\\theme\\common",
+    "\\htdocs\\theme\\common\\fontawesome-5",
+    "\\htdocs\\theme\\common\\fontawesome-5\\css"
+  ],
+  "SelectedNode": "\\htdocs\\core\\actions_addupdatedelete.inc.php",
+  "PreviewInSolutionExplorer": false
+}
