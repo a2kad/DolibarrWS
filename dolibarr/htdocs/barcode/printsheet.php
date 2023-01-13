@@ -23,7 +23,7 @@
  *	\brief		Page to print sheets with barcodes using the document templates into core/modules/printsheets
  */
 
-if (!empty($_POST['mode']) && $_POST['mode'] === 'label') {	// Page is called to build a PDF and output, we must ne renew the token.
+if (!empty($_POST['mode']) && $_POST['mode'] === 'label') {	// Page is called to build a PDF and output, we must not renew the token.
 	if (!defined('NOTOKENRENEWAL')) {
 		define('NOTOKENRENEWAL', '1'); // Do not roll the Anti CSRF token (used if MAIN_SECURITY_CSRF_WITH_TOKEN is on)
 	}
@@ -203,25 +203,30 @@ if ($action == 'builddoc') {
 			$forceimgscalewidth = (empty($conf->global->BARCODE_FORCEIMGSCALEWIDTH) ? 1 : $conf->global->BARCODE_FORCEIMGSCALEWIDTH);
 			$forceimgscaleheight = (empty($conf->global->BARCODE_FORCEIMGSCALEHEIGHT) ? 1 : $conf->global->BARCODE_FORCEIMGSCALEHEIGHT);
 
-			for ($i = 0; $i < $numberofsticker; $i++) {
-				$arrayofrecords[] = array(
-					'textleft'=>$textleft,
-					'textheader'=>$textheader,
-					'textfooter'=>$textfooter,
-					'textright'=>$textright,
-					'code'=>$code,
-					'encoding'=>$encoding,
-					'is2d'=>$is2d,
-					'photo'=>$barcodeimage	// Photo must be a file that exists with format supported by TCPDF
-				);
+			$MAXSTICKERS = 1000;
+			if ($numberofsticker <= $MAXSTICKERS) {
+				for ($i = 0; $i < $numberofsticker; $i++) {
+					$arrayofrecords[] = array(
+						'textleft'=>$textleft,
+						'textheader'=>$textheader,
+						'textfooter'=>$textfooter,
+						'textright'=>$textright,
+						'code'=>$code,
+						'encoding'=>$encoding,
+						'is2d'=>$is2d,
+						'photo'=>$barcodeimage	// Photo must be a file that exists with format supported by TCPDF
+					);
+				}
+			} else {
+				$mesg = $langs->trans("ErrorQuantityIsLimitedTo", $MAXSTICKERS);
+				$error++;
 			}
 		}
 
 		$i++;
-		$mesg = '';
 
 		// Build and output PDF
-		if ($mode == 'label') {
+		if (!$error && $mode == 'label') {
 			if (!count($arrayofrecords)) {
 				$mesg = $langs->trans("ErrorRecordNotFound");
 			}
@@ -240,7 +245,7 @@ if ($action == 'builddoc') {
 			}
 		}
 
-		if ($result <= 0 || $mesg) {
+		if ($result <= 0 || $mesg || $error) {
 			if (empty($mesg)) {
 				$mesg = 'Error '.$result;
 			}
@@ -271,8 +276,6 @@ print '<br>';
 
 print '<span class="opacitymedium">'.$langs->trans("PageToGenerateBarCodeSheets", $langs->transnoentitiesnoconv("BuildPageToPrint")).'</span><br>';
 print '<br>';
-
-dol_htmloutput_errors($mesg);
 
 //print img_picto('','puce').' '.$langs->trans("PrintsheetForOneBarCode").'<br>';
 //print '<br>';
@@ -424,12 +427,12 @@ print '</div><div class="tagtd" style="overflow: hidden; white-space: nowrap; ma
 print '<input size="16" type="text" name="forbarcode" id="forbarcode" value="'.$forbarcode.'">';
 print '</div></div>';
 
-/**/
+/*
 $barcodestickersmask=GETPOST('barcodestickersmask');
 print '<br>'.$langs->trans("BarcodeStickersMask").':<br>';
 print '<textarea cols="40" type="text" name="barcodestickersmask" value="'.GETPOST('barcodestickersmask').'">'.$barcodestickersmask.'</textarea>';
 print '<br>';
-/**/
+*/
 
 print '</div>';
 

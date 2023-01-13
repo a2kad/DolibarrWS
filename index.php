@@ -18,11 +18,11 @@ $appDir = '../apps/';
 
 
 // we set version of applications
-$phpVersion = '7.3.12';
+$phpVersion = '7.3.33';
 if ($phpVersion != phpversion()) $phpVersion .= ' ('.phpversion().')';
-$apacheVersion = '2.4.41';
+$apacheVersion = '2.4.51';
 if ($apacheVersion != $_SERVER["SERVER_SOFTWARE"]) $apacheVersion .= ' ('.$_SERVER["SERVER_SOFTWARE"].')';
-$mysqlVersion = '10.4.10';
+$mysqlVersion = '10.6.5';
 $apachePort = '80';
 
 

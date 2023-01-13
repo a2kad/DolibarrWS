@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\dolibarr",
+    "\\dolibarr\\htdocs",
+    "\\dolibarr\\htdocs\\core",
+    "\\dolibarr\\htdocs\\core\\modules",
+    "\\dolibarr\\htdocs\\core\\modules\\facture",
+    "\\dolibarr\\htdocs\\core\\modules\\facture\\doc",
+    "\\dolibarr\\htdocs\\custom",
+    "\\dolibarr\\htdocs\\custom\\etiquetbarcode"
   ],
-  "SelectedNode": "\\dolibarr",
   "PreviewInSolutionExplorer": false
 }

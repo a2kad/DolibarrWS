@@ -28,15 +28,6 @@
 
 require_once DOL_DOCUMENT_ROOT.'/core/class/commonstickergenerator.class.php';
 
-//require '../main.inc.php';
-require_once DOL_DOCUMENT_ROOT.'/product/class/product.class.php';
-require_once DOL_DOCUMENT_ROOT.'/fourn/class/fournisseur.product.class.php';
-require_once DOL_DOCUMENT_ROOT.'/core/lib/company.lib.php';
-require_once DOL_DOCUMENT_ROOT.'/core/lib/product.lib.php';
-require_once DOL_DOCUMENT_ROOT.'/core/class/html.formcompany.class.php';
-require_once DOL_DOCUMENT_ROOT.'/core/class/html.formother.class.php';
-require_once DOL_DOCUMENT_ROOT.'/product/class/html.formproduct.class.php';
-
 /**
  *	Class to generate stick sheet with format Avery or other personalised
  */
@@ -88,33 +79,12 @@ class pdf_tcpdflabel extends CommonStickerGenerator
 	 * @param int	  $h		   height in user units
 	 * @return void
 	 */
-	 
-	public function nameOfProduct(&$pdf, $outputlangs)
-	{
-		
-	}
 	private function writeBarcode(&$pdf, $code, $encoding, $is2d, $x, $y, $w, $h)
 	{
-		
-		// set cell padding
-		$pdf->setCellPaddings(10, 1, 0, 0);
-
-		// set cell margins
-		$pdf->setCellMargins(0, 0, 0, 0);
-		
-				
-		$name_of_code_barre = 'Name of product';
-		
 		if ($is2d) {
 			$pdf->write2DBarcode($code, $encoding, $x, $y, $w, $h, $this->_style2d, $this->_align2d);
 		} else {
 			$pdf->write1DBarcode($code, $encoding, $x, $y, $w, $h, $this->_xres, $this->_style1d);
-			/* Etiquet ---> add the name of product */
-			$html .= '<br />';
-			$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
-			
-			$pdf->MultiCell(65, 5, $name_of_code_barre, 0, 'L', 0, 0, '', '', true);
-			/*$pdf->Cell(45, 0, 'CODE 39', 1, 1);*/
 		}
 	}
 
